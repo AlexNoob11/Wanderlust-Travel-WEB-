@@ -1,0 +1,246 @@
+/* Base Styles */
+html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background: #fff; color: #333; }
+.section { padding: 100px 8%; text-align: center; }
+.bg-light { background: #f9f9f9; }
+.title { font-size: 2.5rem; margin-bottom: 50px; position: relative; }
+.title::after { content: ''; background: #ff4d4d; height: 3px; width: 50px; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.logo { 
+    font-size: 24px; 
+    font-weight: 600; 
+    color: #333; /* Changed from #fff */
+}
+
+/* Hide Hamburger by default on Desktop */
+.menu-toggle {
+    display: none;
+}
+.logo span { color: #ff4d4d; }
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 20px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+.nav-links a:hover { color: #ff4d4d; }
+
+/* Hero */
+.hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+.hero h1 { font-size: 4.5rem; margin-bottom: 15px; }
+.btn-primary { background: #ff4d4d; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; display: inline-block; border: none; cursor: pointer; font-weight: 600; }
+
+/* Destinations Grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.card { position: relative; border-radius: 15px; overflow: hidden; height: 450px; }
+.card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.card:hover img { transform: scale(1.1); }
+.card-info { position: absolute; bottom: 0; padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: white; text-align: left; }
+.detail-link { color: #ff4d4d; text-decoration: none; font-weight: 600; margin-top: 10px; display: inline-block; }
+
+/* Packages */
+.package-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.p-card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); width: 300px; transition: 0.3s; }
+.p-card.featured { transform: scale(1.05); border: 2px solid #ff4d4d; }
+.price { font-size: 2.5rem; font-weight: 600; margin: 20px 0; }
+.price span { font-size: 1rem; color: #777; }
+.p-card ul { list-style: none; margin-bottom: 30px; }
+.p-card li { margin-bottom: 10px; color: #555; }
+.btn-outline { border: 2px solid #ff4d4d; color: #ff4d4d; padding: 10px 25px; border-radius: 30px; text-decoration: none; display: inline-block; }
+
+/* Gallery */
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.gallery-item img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; filter: grayscale(30%); transition: 0.3s; }
+.gallery-item img:hover { filter: grayscale(0%); transform: translateY(-5px); }
+
+/* Contact Section */
+.contact-section { background: #111; color: white; }
+.contact-box { display: flex; gap: 50px; text-align: left; flex-wrap: wrap; }
+.contact-info, .contact-form { flex: 1; min-width: 300px; }
+.contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 5px; border: none; background: #222; color: white; }
+footer { padding: 30px; background: #000; color: #777; text-align: center; font-size: 0.8rem; }
+/* Auth Specific Styles */
+.auth-btn {
+    cursor: pointer;
+}
+
+.btn-nav {
+    background: #ff4d4d;
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: white !important;
+}
+
+/* Modal Overlay */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+}
+
+/* Modal Box */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 40px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #777;
+}
+
+.close-modal:hover { color: #ff4d4d; }
+
+.modal-content .contact-form input {
+    background: #f4f4f4;
+    color: #333;
+    border: 1px solid #ddd;
+}
+/* RESPONSIVE BREAKPOINT (768px) */
+@media screen and (max-width: 768px) {
+    /* Ensure the logo stays visible */
+    .navbar {
+        padding: 15px 5%;
+    }
+    .hero h1 { font-size: 4.5rem; margin-bottom: 15px; }
+
+    .nav-links {
+        position: fixed;
+        right: -100%; 
+        top: 70px;
+        flex-direction: column;
+        background: #fff;
+        width: 100%;
+        height: calc(100vh - 70px); /* Full height minus nav bar */
+        text-align: center;
+        transition: 0.4s ease-in-out;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        padding: 40px 0;
+        display: flex; /* Ensure it's flex even on mobile */
+    }
+    
+
+    .nav-links.active {
+        right: 0; 
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+        display: block;
+        width: 100%;
+    }
+
+    /* Hamburger Icon Styling */
+    .menu-toggle {
+        display: block; /* Show only on mobile */
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #333;
+    }
+
+    /* Hamburger Animation to 'X' */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+    /* Small Mobile Views */
+     @media (max-width: 480px) {
+           .hero-content h1 {
+                font-size: 2rem !important;
+            }
+            .section {
+                padding: 40px 15px !important;
+            }
+            .title {
+                font-size: 1.8rem !important;
+            }
+        }
+    /* --- Mobile Specific Fixes --- */
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 20% auto; /* Centers better on small screens */
+        padding: 30px 20px; /* Reduced padding to save space */
+        width: 92%;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem; /* Smaller heading */
+        margin-bottom: 20px;
+    }
+
+    /* Make form inputs and buttons easier to tap (fat-finger friendly) */
+    .contact-form input {
+        padding: 15px;
+        font-size: 16px; /* Prevents iOS auto-zoom on focus */
+        margin-bottom: 12px;
+    }
+    .contact-form .btn-primary {
+        width: 150px;
+    }
+    .btn-primary {
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    .close-modal {
+        top: 10px;
+        right: 15px;
+        font-size: 28px;
+    }
+}
