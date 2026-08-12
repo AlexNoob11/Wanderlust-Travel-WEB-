@@ -1,6 +1,6 @@
 # Wanderlust-Travel-WEB-
-##Overview
-#WanderLust is a dynamic PHP/MySQL travel booking web app featuring user session management, package browsing, and interactive inquiry handling.
+# Overview
+## WanderLust is a dynamic PHP/MySQL travel booking web app featuring user session management, package browsing, and interactive inquiry handling.
 
 Key Features
 Dynamic Sessions: Tailors UI and URL parameters based on user login state.
