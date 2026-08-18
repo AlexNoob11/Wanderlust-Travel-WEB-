@@ -1,5 +1,4 @@
 <?php
-// Comprehensive Gallery Data with verified Unsplash IDs
 $gallery_items = [
     // --- PHILIPPINES ---
     ["img" => "https://images.unsplash.com/photo-1518509194600-62ba0cb460d3", "title" => "El Nido", "cat" => "Beach"],
