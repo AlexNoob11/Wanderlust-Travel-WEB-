@@ -2,7 +2,6 @@
 session_start();
 include 'db.php'; 
 
-// 1. Force Login Check
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php?status=unauthorized");
     exit();
