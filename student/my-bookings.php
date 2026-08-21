@@ -1,6 +1,5 @@
 <?php
 session_start();
-// Include your database connection
 include 'db.php'; 
 
 // 1. Force Login Check
