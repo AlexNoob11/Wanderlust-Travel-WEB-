@@ -34,7 +34,6 @@ if (isset($_POST['register'])) {
     exit();
 }
 
-// 3. Handle Login
 if (isset($_POST['login'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
